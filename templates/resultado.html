@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Pedido</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            line-height: 1.5;
+        }
+
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .product-list li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .product-list li:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .product-list li span {
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Detalhes do Pedido</h1>
+
+    <div class="info">
+        <p><strong>Cliente:</strong> {{ pedido.cliente }}</p>
+        <p><strong>Status:</strong> {{ pedido.status }}</p>
+    </div>
+
+    <h2>Produtos</h2>
+    <ul class="product-list">
+        {% for produto, quantidade in pedido.quantidade.items() %}
+            <li>
+                <span>Produto:</span> {{ produto.nome }}<br>
+                <span>Quantidade:</span> {{ quantidade }}<br>
+                <span>Preço Unitário:</span> R$ {{ produto.preco }}<br>
+                <span>Total:</span> R$ {{ produto.preco * quantidade }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p class="total">Total do Pedido: R$ {{ pedido.total_pedido() }}</p>
+
+    <a href="{{ url_for('formulario') }}" class="back-btn">Voltar para o Formulário</a>
+</div>
+
+</body>
+</html>

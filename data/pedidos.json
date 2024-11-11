@@ -1,0 +1,182 @@
+[
+    {
+        "produtos": [
+            {
+                "nome": "Camisa",
+                "preco": 50.0,
+                "categoria": "Vestu\u00e1rio"
+            },
+            {
+                "nome": "Cal\u00e7a",
+                "preco": 80.0,
+                "categoria": "Vestu\u00e1rio"
+            },
+            {
+                "nome": "Sapato",
+                "preco": 100.0,
+                "categoria": "Cal\u00e7ado"
+            }
+        ],
+        "quantidades": {
+            "Camisa": 2,
+            "Cal\u00e7a": 1,
+            "Sapato": 3
+        },
+        "cliente": "Yasmin",
+        "status": "Novo",
+        "total": 480.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Camisa",
+                "preco": 50.0,
+                "categoria": "Vestu\u00e1rio"
+            },
+            {
+                "nome": "Sapato",
+                "preco": 100.0,
+                "categoria": "Cal\u00e7ado"
+            }
+        ],
+        "quantidades": {
+            "Camisa": 1,
+            "Sapato": 4
+        },
+        "cliente": "Ricardo",
+        "status": "Processando",
+        "total": 450.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Blusa",
+                "preco": 45.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Short",
+                "preco": 65.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "Blusa": 3,
+            "Short": 2
+        },
+        "cliente": "Ana",
+        "status": "Novo",
+        "total": 265.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Rel\u00f3gio",
+                "preco": 150.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Bon\u00e9",
+                "preco": 25.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "Rel\u00f3gio": 1,
+            "Bon\u00e9": 4
+        },
+        "cliente": "Carlos",
+        "status": "Processando",
+        "total": 250.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "\u00d3culos",
+                "preco": 120.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Bolsa",
+                "preco": 200.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "\u00d3culos": 1,
+            "Bolsa": 2
+        },
+        "cliente": "Fernanda",
+        "status": "Finalizado",
+        "total": 520.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Sapato",
+                "preco": 180.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Cinto",
+                "preco": 30.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "Sapato": 1,
+            "Cinto": 2
+        },
+        "cliente": "Paulo",
+        "status": "Novo",
+        "total": 240.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Camisa",
+                "preco": 50.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Cal\u00e7a",
+                "preco": 80.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Sapato",
+                "preco": 100.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "Camisa": 2,
+            "Cal\u00e7a": 1,
+            "Sapato": 3
+        },
+        "cliente": "Jonas",
+        "status": "Novo",
+        "total": 480.0
+    },
+    {
+        "produtos": [
+            {
+                "nome": "Camisa",
+                "preco": 50.0,
+                "categoria": "Diversos"
+            },
+            {
+                "nome": "Sapato",
+                "preco": 100.0,
+                "categoria": "Diversos"
+            }
+        ],
+        "quantidades": {
+            "Camisa": 1,
+            "Sapato": 4
+        },
+        "cliente": "Maria",
+        "status": "Processando",
+        "total": 450.0
+    }
+]

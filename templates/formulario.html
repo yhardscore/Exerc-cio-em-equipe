@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pedido</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: #fafafa;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background-color: #fff;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        #produtosContainer {
+            margin-bottom: 30px;
+        }
+
+        .product-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-inputs input {
+            width: 100%;
+        }
+
+        #adicionarProduto {
+            background-color: #2196F3;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #adicionarProduto:hover {
+            background-color: #1976D2;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 1rem;
+        }
+
+        input[type="text"]#status {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .product-inputs {
+                grid-template-columns: 1fr;
+            }
+            .btn {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Formulário de Pedido</h1>
+    <form method="POST" action="{{ url_for('formulario') }}" id="formularioPedido">
+        
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente" required>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" placeholder="Status do Pedido" required>
+
+        <div id="produtosContainer">
+            <div class="product-inputs" id="produto1">
+                <div>
+                    <label for="produto1">Produto:</label>
+                    <input type="text" name="produto1" placeholder="Nome do Produto" required>
+                </div>
+                <div>
+                    <label for="preco1">Preço:</label>
+                    <input type="number" name="preco1" placeholder="Preço do Produto" required>
+                </div>
+                <div>
+                    <label for="quantidade1">Quantidade:</label>
+                    <input type="number" name="quantidade1" placeholder="Quantidade" required>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn" id="adicionarProduto">Adicionar Produto</button><br><br>
+
+        <button type="submit" class="btn">Enviar Pedido</button>
+    </form>
+</div>
+
+<script>
+    let contadorProduto = 1;
+
+    document.getElementById('adicionarProduto').addEventListener('click', function() {
+        contadorProduto++;
+
+        let novoProduto = `
+            <div class="product-inputs" id="produto${contadorProduto}">
+                <div>
+                    <label for="produto${contadorProduto}">Produto:</label>
+                    <input type="text" name="produto${contadorProduto}" placeholder="Nome do Produto" required>
+                </div>
+                <div>
+                    <label for="preco${contadorProduto}">Preço:</label>
+                    <input type="number" name="preco${contadorProduto}" placeholder="Preço do Produto" required>
+                </div>
+                <div>
+                    <label for="quantidade${contadorProduto}">Quantidade:</label>
+                    <input type="number" name="quantidade${contadorProduto}" placeholder="Quantidade" required>
+                </div>
+            </div>
+        `;
+        document.getElementById('produtosContainer').insertAdjacentHTML('beforeend', novoProduto);
+    });
+</script>
+
+</body>
+</html>
